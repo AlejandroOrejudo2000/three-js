@@ -16,7 +16,12 @@
 </head>
 
 <body>
+    <!----------------------------------- BACKGROUND ----------------------------------->
+    <div class="bg-container">
+        <canvas>
 
+        </canvas>
+    </div>
     <!------------------------------------- NAVBAR -------------------------------------->
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container">
@@ -50,7 +55,7 @@
     </section>
     <!------------------------------------ PROYECTS ------------------------------------>
     <section class="container p-section">
-        <h1 class="section-title">Proyects</h1>
+        <h1 class="p-title">Proyects</h1>
         <div class="container p-nav" name="proyect-selector">
             <ul class="nav justify-content-center">
                 <li class="nav-item">
@@ -85,16 +90,16 @@
                     <a class="btn btn-circle mr-3 d-flex justify-content-center align-items-center pr-item img-hover-zoom"
                         data-toggle="collapse" href="#collapseExample" aria-expanded="false"
                         aria-controls="collapseExample">
-                        <img src="images/project-icon-placeholder.png" class="rounded-circle z-depth-5" height="100">
+                        <img src="images/project-icon-placeholder.png" class="rounded-circle z-depth-5">
                     </a>
                 </li>
             </ul>
         </div>
         <div class="container p-display" name="proyect-display">
-            <div class="row align-items-center justify-content-centerr">
+            <div class="row align-items-center justify-content-center">
                 <div class="col-12 col-md-8 align-items-center justify-content-center">
-                    <div class="ratio ratio-16x9 canvas-display">
-                        <canvas class="webgl canvas">
+                    <div class="ratio ratio-16x9 canvas-display" id="root-proyect">
+                        <canvas class="webgl canvas" id="cv-proyect">
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
@@ -117,7 +122,12 @@
     </section>
     <!------------------------------------- CONTACT ------------------------------------>
     <section class="container p-section">
-        <h1 class="section-title">Contact</h1>
+        <h1 class="p-title">Contact</h1>
+        <div class="p-content">
+            <div class="ratio ratio-16x9 canvas-display" id="root-contact">
+                <canvas class="webgl canvas" id="cv-contact">
+            </div>
+        </div>
     </section>
     <!------------------------------------- FOOTER ------------------------------------->
     <footer>
@@ -132,8 +142,9 @@
     <!-- Three.js (Orbit controls)-->
     <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
 
-
+    <script src="js/threeDisplay.js"></script>
     <script src="js/proyect-scene.js"></script>
+    <script src="js/contact-display.js"></script>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"

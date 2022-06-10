@@ -1,5 +1,4 @@
-// CANVAS:
-class ProyectDisplay extends TDisplay {
+class ContactDisplay extends TDisplay {
     constructor(canvas, display) { super(canvas, display); }
 
     start() {
@@ -7,7 +6,6 @@ class ProyectDisplay extends TDisplay {
         const m = new THREE.MeshBasicMaterial({ color: 0x0000ff, opacity: 1.0 });
         this.cube = new THREE.Mesh(g, m);
         this.scene.add(this.cube);
-        this.camera.position.set(0, 0, 5);
     }
 
     update(clock) {
@@ -17,12 +15,10 @@ class ProyectDisplay extends TDisplay {
     }
 }
 
-let pdisplay = new ProyectDisplay(
-    document.getElementById('cv-proyect'),
-    document.getElementById('root-proyect'));
 
-
-
+let tdisplay = new ContactDisplay(
+    document.getElementById('cv-contact'),
+    document.getElementById('root-contact'));
 
 
 
