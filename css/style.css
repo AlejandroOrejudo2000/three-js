@@ -5,10 +5,10 @@ body {
 
 :root {
     --main-color: white;
-    --section-color: #aaaf;
-    --canvas-color: #88888888;
-    --title-color: #bbb;
-    --bg-color: #666;
+    --section-color: #aaa0;
+    --canvas-color: #8880;
+    --title-color: #bbbf;
+    --bg-color: #6660;
 }
 
 .bg {
@@ -83,11 +83,12 @@ footer {
 
 /* ------------------------------------------------- */
 .bg-container {
+    margin: 0 auto;
     position: fixed;
     background-color: var(--bg-color);
     z-index: -1;
-    height: 100%;
     width: 100%;
+    height: 100%;
 }
 
 /* ------------------------------------------------- */

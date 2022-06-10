@@ -1,28 +1,36 @@
-// CANVAS:
-class ProyectDisplay extends TDisplay {
-    constructor(canvas, display) { super(canvas, display); }
+contactMain();
 
-    start() {
-        const g = new THREE.BoxGeometry(1, 1, 1);
-        const m = new THREE.MeshBasicMaterial({ color: 0x0000ff, opacity: 1.0 });
-        this.cube = new THREE.Mesh(g, m);
-        this.scene.add(this.cube);
-        this.camera.position.set(0, 0, 5);
-    }
+function contactMain() {
 
-    update(clock) {
+    const td = new TDisplay(
+        document.getElementById('cv-proyect'),
+        document.getElementById('root-proyect'));
+    const g = new THREE.BoxGeometry(1, 1, 1);
+    const m = [
+        new THREE.MeshBasicMaterial({ color: 0x0000ff, opacity: 1.0 }),
+        new THREE.MeshBasicMaterial({ color: 0x0000ff, opacity: 1.0 }),
+        new THREE.MeshBasicMaterial({ color: 0xff0000, opacity: 1.0 }),
+        new THREE.MeshBasicMaterial({ color: 0xff0000, opacity: 1.0 }),
+        new THREE.MeshBasicMaterial({ color: 0x00ff00, opacity: 1.0 }),
+        new THREE.MeshBasicMaterial({ color: 0x00ff00, opacity: 1.0 }),
+    ];
+    let cube = new THREE.Mesh(g, m);
+    td.scene.add(cube);
+    const controls = new THREE.OrbitControls(td.camera, td.renderer.domElement);
+    controls.enableZoom = false;
+    controls.enablePan = false;
+    const clock = new THREE.Clock();
+
+    const update = () => {
         const elapsedTime = clock.getElapsedTime();
-        this.cube.rotation.y = 0.5 * elapsedTime;
-        this.cube.rotation.x = 0.5 * elapsedTime;
-    }
+        cube.rotation.y = 0.5 * elapsedTime;
+        cube.rotation.x = 0.5 * elapsedTime;
+        td.render();
+        requestAnimationFrame(update);
+    };
+
+    update();
 }
-
-let pdisplay = new ProyectDisplay(
-    document.getElementById('cv-proyect'),
-    document.getElementById('root-proyect'));
-
-
-
 
 
 

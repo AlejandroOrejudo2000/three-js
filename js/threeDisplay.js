@@ -1,5 +1,4 @@
 class TDisplay {
-
     constructor(canvas, root) {
         this.canvas = canvas;
         this.root = root;
@@ -19,20 +18,7 @@ class TDisplay {
         window.addEventListener('resize', () => {
             this.onResize();
         })
-
-        this.start();
-
-        const clock = new THREE.Clock()
-        const tick = () => {
-            this.update(clock);
-            this.render();
-            requestAnimationFrame(tick);
-        }
-        tick();
-
     }
-
-
 
     render() {
         this.renderer.render(this.scene, this.camera);
@@ -45,10 +31,8 @@ class TDisplay {
         this.renderer.setSize(this.root.clientWidth, this.root.clientHeight);
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     }
-
-    start() { }
-    update(clock) { }
 }
+
 
 
 
