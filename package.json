@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "three.js web portfolio",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlejandroOrejudo2000/three-js.git"
