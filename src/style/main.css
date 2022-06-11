@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.cv-container {
+    margin: 0;
+    position: fixed;
+    background: red;
+    height: 100vh;
+    padding: 0;
+}
+
+.canvas {
+    margin: 0;
+}
